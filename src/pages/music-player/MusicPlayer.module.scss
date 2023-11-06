@@ -1,0 +1,16 @@
+.musicPlayer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.musicPlayerBg {
+  position: absolute;
+  right: 0;
+  width: calc(100% - 18rem);
+  height: 100%;
+  z-index: -1;
+}

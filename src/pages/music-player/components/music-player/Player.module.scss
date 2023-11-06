@@ -1,0 +1,129 @@
+@import "../../../../assets/variables";
+
+@mixin thumbStyle {
+  width: 1.2rem;
+  height: 1.2rem;
+  background: #05AC6A;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.player {
+  position: relative;
+  display: flex;
+  border-radius: 0.8rem;
+  background: $white;
+  box-shadow: $shadow;
+  padding: 0.7rem 1.8rem;
+  min-width: 58rem;
+  background-image: url(../../../../assets/images/logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 2.4rem;
+}
+
+.controlButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 100%;
+  background-color: $greenLight;
+  cursor: url(../../../../assets/images/cursor-click.png), auto;
+}
+
+.rewindButton {
+  width: 5.4rem;
+  height: 5.4rem;
+}
+
+.playButton {
+  width: 6.4rem;
+  height: 6.4rem;
+  margin: 0.8rem 0;
+}
+
+.volumeControl {
+  display: flex;
+  align-items: center;
+}
+
+.volumeButton {
+  border: none;
+  background: none;
+  cursor: url(../../../../assets/images/cursor-click.png), auto;
+}
+
+.volume {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26rem;
+  height: 0.2rem;
+  flex-shrink: 0;
+  transition: background 0.3s;
+
+  &::-webkit-slider-thumb {
+    @include thumbStyle;
+
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  &::-moz-range-thumb {
+    @include thumbStyle;
+  }
+}
+
+.name {
+  margin: 5rem 0;
+  font-family: Roboto;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.progressBar {
+  width: 34.2rem;
+  height: 0.4rem;
+  background-color: $gray;
+  cursor: url(../../../../assets/images/cursor-click.png), auto;
+}
+
+.progress {
+  height: 100%;
+  background-color: $greenDark;
+  transition: width 0.3s;
+  cursor: url(../../../../assets/images/cursor-click.png), auto;
+}
+
+.disk {
+  position: absolute;
+  width: 32rem;
+  height: 32rem;
+  top: -6rem;
+  right: -16rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.diskRotate {
+  animation:spin 4s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform:rotate(360deg);
+  }
+}
